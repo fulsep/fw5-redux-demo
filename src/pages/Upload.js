@@ -1,12 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 const Upload = () => {
   const dispatch = useDispatch()
   const auth = useSelector(state=>state.auth)
   return (
     <>
+      <Navbar />
       {auth.token===null && <Navigate to='/login' />}
       <div className='d-flex vh-100 justify-content-center align-items-center'>
         <div>
